@@ -7,12 +7,37 @@
     <link rel="stylesheet" href="./template.css" />
     <link rel="stylesheet" href="./style-flex.css" />
     <link rel="stylesheet" href="./style-box-model.css" />
+    <svg width="0" height="0" style="position: absolute;"> <!--SVG effect made by Gemini 2.5 Flash-->
+      <defs>
+        <filter id="wet-smudge">
+          <feTurbulence type="fractalNoise" 
+                        baseFrequency="0.03 0.03" 
+                        numOctaves="2" 
+                        result="turbulence" />
+       
+          <feGaussianBlur in="turbulence" stdDeviation="1" result="smudge-map" />
+      
+         <feDisplacementMap in="SourceGraphic" 
+                         in2="smudge-map" 
+                         scale="13" 
+                         xChannelSelector="R" 
+                         yCh  annelSelector="G" 
+                         result="displaced" />
+      
+          <feGaussianBlur in="displaced" stdDeviation="0.7" result="smeared" />
+        
+          <feMerge>
+            <feMergeNode in="smeared" />
+          </feMerge>
+        </filter>
+      </defs>
+    </svg>
   </head>
   <body>
-    <h1>Business Cards</h1>
-    <p class="attribution">By [your name here]</div>
+    <h1>Business Kaards</h1>
+    <p class="attribution">By [Caden White]</div>
 
-    <h2>Box Model Card:</h2>
+    <h2>Box Model Kaard:</h2>
 
     <!-- Change landscape to portrait for a 
      portrait card -->
@@ -21,13 +46,14 @@
         <!-- Front of card here -->         
       </div>
       <div class="card-back">
+        <video src="Rouxls_Kaard_overworld_appear.webm" height="100%" id="appear-1">
         <!-- Back of card here -->
       </div>
     </main>
 
     <p>Explain your layout approach here...</p>
 
-    <h2>Flex Box Card:</h2>
+    <h2>Flex Box Kaard:</h2>
 
     <!-- Change landscape to portrait for a 
      portrait card -->
@@ -36,18 +62,20 @@
         <!-- Front of card -->
       </div>
       <div class="card-back">
+        <video src="Rouxls_Kaard_overworld_appear.webm" height="100%" id="appear-2">
         <!-- Back of card -->
       </div>
     </main>
 
     <p>Explain your layout approach here...</p>
 
-    <div>
+    <a>
       <h4>Sources</h4>
       <ul>
-        <li>List sources for images, etc. here</li>
+        <li>Rouxls Kaard by Toby Fox for <a href="https://deltarune.com">Deltarune</a></li>
+        <li>Text effect base made with help from Gemini 2.5 Flash</li>
       </ul>
-    </div>
+    </a>
 
     <script src="./script.js"></script>
   </body>
