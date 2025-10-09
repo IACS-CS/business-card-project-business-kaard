@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Hello World</title>
+    <title>Business Kaards</title>
+    <link rel="icon" href="./Media/Rouxls_Kaard_face.png" />
     <meta charset="utf-8" />
+    <audio src="./Media/rouxls-kaard-appears.mp3" id="aa1"></audio>
+    <audio src="./Media/rouxls-kaard-appears.mp3" id="aa2"></audio>
+    <audio src="./Media/rouxls-kaard-appears-pitched-down.mp3" id="aa3"></audio>
+    <audio src="./Media/rouxls-kaard-appears-pitched-down.mp3" id="aa4"></audio>
     <meta name="viewport" content="width=device-width, initial-scale=1" />    
     <link rel="stylesheet" href="./template.css" />
     <link rel="stylesheet" href="./style-flex.css" />
     <link rel="stylesheet" href="./style-box-model.css" />
     <svg width="0" height="0" style="position: absolute;"> <!--SVG effect made by Gemini 2.5 Flash-->
       <defs>
-        <filter id="wet-smudge">
+        <filter id="wet">
           <feTurbulence type="fractalNoise" 
                         baseFrequency="0.03 0.03" 
                         numOctaves="2" 
@@ -31,49 +36,80 @@
           </feMerge>
         </filter>
       </defs>
+                  <defs>
+                <filter id="projector" x="0.9%" y="0%" width="500%" height="100%">
+                    <feTurbulence in="SourceGraphic" type="fractalNoise" result="turbulence"/>
+                    <feDisplacementMap in="SourceGraphic" in2="turbulence" result="displaced"/>
+                    <feGaussianBlur in="displaced" stdDeviation="100,0" result="faded-smudge"/>
+                    <feMerge>
+                        <feMergeNode in="faded-smudge" /> <!-- The smudge is the bottom layer -->
+                        <feMergeNode in="SourceGraphic" /> <!-- The clean original is the top layer -->
+                    </feMerge>
+                </filter>
+            </defs>
+
     </svg>
   </head>
   <body>
-    <h1>Business Kaards</h1>
-    <p class="attribution">By [Caden White]</div>
+    <h1 class="wet">Business Kaards</h1>
+    <p class="projector attribution">By [Caden White]</div>
 
-    <h2>Box Model Kaard:</h2>
+    <h2 class="wet">Box Model Kaard:</h2>
 
     <!-- Change landscape to portrait for a 
      portrait card -->
-    <main class="card landscape card-1">
-      <div class="card-front">
-        <!-- Front of card here -->         
+    <div class="cards">
+    <main class="card landscape card-1 style-box-model">
+      <div class="projector card-front">
+        <!-- Front of card here -->
+         <div>Rouxls' Puzzles</div>
+         <div>Always #2!</div>
       </div>
-      <div class="card-back">
-        <video src="Rouxls_Kaard_overworld_appear.webm" height="100%" id="appear-1">
+      <div class="projector card-back">
+        <video src="./Media/Rouxls_Kaard_overworld_appear.webm" id="av1">
         <!-- Back of card here -->
       </div>
     </main>
 
-    <p>Explain your layout approach here...</p>
+        <main class="card portrait card-1-2 style-box-model">
+      <div class="projector card-front">
+        <!-- Front of card here -->
+         <div class="title">Rouxls Kaard</div>
+         <div class="title">Duke of Puzzles</div>
+         <div class="based">Always #2!</div>
+         <div class="description">Miniboss for hire.</div>
+         <div class="description">Will appear even if not hired</div>
+      </div>
+      <div class="projector card-back">
+        <video src="./Media/Rouxls_Kaard_overworld_appear.webm" id="av2">
+        <!-- Back of card here -->
+      </div>
+    </main>
+    </div>
 
-    <h2>Flex Box Kaard:</h2>
+    <p class="wet mayonaise">Rouxls Kaard</p>
+
+    <h2 class="projector">Flex Box Kaard:</h2>
 
     <!-- Change landscape to portrait for a 
      portrait card -->
     <main class="card landscape card-2">
-      <div class="card-front">
+      <div class="wet card-front">
         <!-- Front of card -->
       </div>
-      <div class="card-back">
-        <video src="Rouxls_Kaard_overworld_appear.webm" height="100%" id="appear-2">
+      <div class="wet card-back">
+        <video src="./Media/Rouxls_Kaard_overworld_appear.webm" height="100%" id="av3">
         <!-- Back of card -->
       </div>
     </main>
 
-    <p>Explain your layout approach here...</p>
+    <p class="projector">Explain your layout approach here...</p>
 
     <a>
-      <h4>Sources</h4>
-      <ul>
-        <li>Rouxls Kaard by Toby Fox for <a href="https://deltarune.com">Deltarune</a></li>
-        <li>Text effect base made with help from Gemini 2.5 Flash</li>
+      <h4 class="wet">Sources</h4>
+      <ul class="wet">
+        <li class="projector">Rouxls Kaard by Toby Fox for <a href="https://deltarune.com">Deltarune</a></li>
+        <li class="wet">Text effects made with help from Gemini 2.5 Pro</li>
       </ul>
     </a>
 

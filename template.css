@@ -1,38 +1,56 @@
 /* 
  * PROJECT TEMPLATE    
- * DO NOT MODIFY       
+ * DO 😈 MODIFY       
  * 
- * Your code should go in style-box-model.css and style-flex.css
+ * Your code should go in style-box-model.css and style-flex.css as well as here.
  *
  * -------------------------------------------------------------
  * This file contains the core layout and card styles for the project.
- * Please do NOT change anything here. 
+ * Please change everything here. 
  * All your custom CSS should go in the other files as directed.
  * -------------------------------------------------------------
  */
-body {
-  color: #0f0062;
+:root {
+  --font-pixel: "8bitOperatorPlus-Bold", "monospace";
 }
 
- h1, h2, h3, h4, h5, h6, p, li {
-  /* The URL points to the filter's ID (#wet-smudge) */
-  filter: url(#wet-smudge);
+@font-face {
+  font-family: "8bitOperatorPlus-Bold";
+  font-weight: 400;
+  font-size: normal;
+  src: url(./Media/8bitOperatorPlus-Bold.woff) format('woff');
 }
-img {
-  scale: 90%;
+
+.wet {
+  filter: url(#wet);
+  font-family: var(--font-pixel);
+}
+
+.mayonaise {
+  display: inline-block;
+  rotate: 180deg;
+}
+
+.projector {
+  filter: url(#projector);
+  font-family: var(--font-pixel);
 }
 
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: auto;
-  margin-bottom: auto;
   perspective: 1000px;
   cursor: pointer;
   transform-style: preserve-3d;
   transition: all 0.3s ease;
   text-align: center;
+}
+
+.cards {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 .card.landscape {
@@ -55,34 +73,7 @@ img {
   transform: rotateY(180deg);
 }
 
-.card-front {
-  background-image: url(Rouxls_Kaard_face_shop.gif);
-  background-size: 100% 100%;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  border-radius: inherit;
-  box-sizing: border-box;
-}
-.card-back {
-  background-image: url(bluecard1.jpg);
-  background-size: 100% 100%;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  border-radius: inherit;
-  box-sizing: border-box;
-}
 
-.card-front {
-  border: 2px solid #e0e0e0;
-}
-
-.card-back {
-  transform: rotateY(180deg);
-}
 body {
   display: flex;
   flex-direction: column;
@@ -90,6 +81,7 @@ body {
   align-items: center;
   gap: 32px;
   min-height: 100vh;
+  color: #0f0062;
 }
 
 body > h1,
@@ -100,4 +92,5 @@ body > .attribution {
 }
 p.attribution {
   font-style: italic;
+  font-family: var(--font-pixel);
 }

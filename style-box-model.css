@@ -1,5 +1,62 @@
-.card-1 h1 {
-  /* Style for card 1 (your box model example */
-  color: red;
-  margin-left: 1.5in;
+.style-box-model.landscape .card-front {
+  color: white;
+  border: 2px solid #e0e0e0;
+  background-image: url(./Media/Rouxls_Kaard_face_shop.gif);
+  background-size: 100% 100%;
+  position: absolute;
+  text-align: right;
+  padding-top: 5px;
+  padding-right: 5px;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: inherit;
+  box-sizing: border-box;
+}
+
+.style-box-model.portrait .card-front {
+  color: white;
+  border: 2px solid #e0e0e0;
+  background-image: url(./Media/Rouxls_Kaard_face_shop.gif);
+  background-size: 100%;
+  background-color: black;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  position: absolute;
+  text-align: right;
+  padding-top: 5px;
+  padding-right: 5px;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: inherit;
+  box-sizing: border-box;
+}
+
+.style-box-model.landscape .card-back {
+  transform: rotateY(180deg);
+  background-image: url(./Media/bluecard1.jpg);
+  background-size: 100% 100%;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: inherit;
+  box-sizing: border-box;
+}
+
+.style-box-model.landscape .card-back video {
+  padding-top: 1.75in;
+  transform: translateY(-46%);
+  height: 50%;
+}
+
+.style-box-model.portrait .card-back {
+  transform: rotateY(180deg);
+  background-image: url(./Media/bluecard2.jpg);
+  background-size: 100% 100%;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  
 }
